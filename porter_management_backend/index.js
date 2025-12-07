@@ -4,16 +4,24 @@ import connectDB from "./config/db.js";
 import dotenv from "dotenv";
 dotenv.config();
 
+//router imports
+import authRouter from "./routes/authRoutes.js";
+
 const app = express(); // creation of the server
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 connectDB();
+
+//routes
+
+app.use("/core-api/auth", authRouter);
+
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "Porter_management_server is running",
+    message: "Porter_management_server is running", 
   });
 });
 

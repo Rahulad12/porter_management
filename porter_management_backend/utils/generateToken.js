@@ -10,7 +10,7 @@ export const generateToken = (user) => {
     },
     secrete_key,
     {
-      expiresIn: "7d",
+      expiresIn: "30d",
     }
   );
 };
