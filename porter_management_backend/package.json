@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "private": true,
+  "license": "ISC",
   "scripts": {
     "dev": "nodemon index.js",
     "server": "node index.js",
