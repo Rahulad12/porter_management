@@ -9,7 +9,17 @@ import authRouter from "./routes/authRoutes.js";
 
 dotenv.config();
 const app = express(); // creation of the server
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5000",
+      process.env.API_URL,
+      process.env.CLIENT_URL,
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 connectDB();
@@ -18,7 +28,11 @@ connectDB();
 app.use("/core-api/auth", authRouter);
 
 //swagger routes
-app.use("/core-api/docs", swaggerUiMiddleware.serve, swaggerUiMiddleware.setup(swaggerSpec));
+app.use(
+  "/core-api/docs",
+  swaggerUiMiddleware.serve,
+  swaggerUiMiddleware.setup(swaggerSpec)
+);
 
 //default route
 app.get("/", (req, res) => {
