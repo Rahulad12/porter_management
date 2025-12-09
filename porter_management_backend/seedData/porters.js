@@ -1,0 +1,26 @@
+const Proters = [
+  {
+    userId: individualPorterUser._id,
+    teamId: null,
+    fullName: "Hari Thapa",
+    phone: "9801112222",
+    address: "Kathmandu",
+    porterType: "individual",
+    experienceYears: 3,
+    isAvailable: true,
+    latitude: 27.7,
+    longitude: 85.33,
+  },
+  {
+    userId: teamLeaderUser._id,
+    teamId: porterTeam._id,
+    fullName: "Team Leader",
+    phone: "9801234567",
+    address: "Lalitpur",
+    porterType: "team_member",
+    experienceYears: 5,
+    isAvailable: true,
+    latitude: 27.695,
+    longitude: 85.31,
+  },
+];
